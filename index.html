@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Preetam Prashant Shet — Portfolio</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="avatar"><img src="assets/profile.jpg" alt="Preetam"></div>
+      <div class="title"><h1>Preetam Prashant Shet</h1><p>B.Tech — Information Science & Engineering • GM University</p></div>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="themeToggle" title="Toggle theme">🌙</button>
+    </nav>
+  </div>
+
+  <section id="home" class="hero reveal mt-18">
+    <div class="card bio">
+      <h2>Hello — I’m Preetam 👋</h2>
+      <p>I am an aspiring software developer with a strong foundation in frontend engineering, UI/UX design, and machine learning applications. Currently pursuing B.Tech in Information Science & Engineering (2023–2027) at GM University, I focus on building clean, responsive, and user-friendly digital experiences.
+
+My interests include developing interactive web interfaces, designing modern dashboard systems, and applying machine learning to solve practical, real-world problems — especially in the areas of automation and sustainability.
+I enjoy working with technologies such as HTML, CSS, JavaScript, Python, C++, XGBoost, and Streamlit, and constantly aim to improve my skills through hands-on projects and internships.
+
+I believe in writing clean code, designing thoughtfully, and building solutions that truly make a difference.</p>
+
+      <div class="skills mt-12">
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+        <span class="tag">C++</span><span class="tag">Python</span><span class="tag">XGBoost</span>
+      </div>
+
+      <h3 class="mt-18">Featured</h3>
+      <div class="projects-grid mt-8">
+        <a class="project-card" href="#projects"><img src="assets/profile.jpg" alt="portfolio"><div class="project-meta">Portfolio</div></a>
+        <a class="project-card" href="#projects"><img src="assets/calendar.png" alt="calendar"><div class="project-meta">Calendar App</div></a>
+      </div>
+    </div>
+
+    <aside class="card profile reveal">
+      <div class="profile">
+        <img src="assets/profile.jpg" alt="Preetam photo">
+        <div><strong>Preetam Prashant Shet</strong></div>
+        <div class="text-muted mt-6">Algeri, Ankola, Uttara Kannada(D), Karnataka</div>
+        <div class="text-muted mt-6">preetam.prashant866@gmail.com • 8660786561</div>
+        <a class="btn btn-space" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      </div>
+    </aside>
+  </section>
+
+  <section id="skills" class="card reveal mt-18">
+    <h2>Skills & Tools</h2>
+    <div class="skills mt-8">
+      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+      <span class="tag">React</span><span class="tag">C++</span><span class="tag">Python</span>
+      <span class="tag">XGBoost</span><span class="tag">NeuralProphet</span><span class="tag">Streamlit</span>
+    </div>
+    <div class="text-muted mt-12">Tools: VS Code • Git • GitHub • Chrome DevTools • Streamlit</div>
+  </section>
+
+  <section id="projects" class="reveal mt-18">
+    <h2>Projects</h2>
+
+    <div class="card mt-12">
+      <h3 class="cat-title">C++ Projects</h3>
+      <div class="project-card block">
+        <img src="assets/exam_sorting.png" alt="Exam Sorting">
+        <div class="project-info">
+          <h3>Examination Result Sorting System</h3>
+          <p>A file-based system that reads unsorted student result records and performs in-place sorting by percentage. Supports Binary Search and key-based indexing for fast retrieval. Backend written in C++ with file I/O optimizations.</p>
+          <ul class="feature-list">
+            <li>In-place sorting (percentage)</li>
+            <li>Binary Search for fast retrieval</li>
+            <li>Key-indexing for instant lookup</li>
+          </ul>
+          <a class="btn" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-12">
+      <h3 class="cat-title">Web & UI Projects</h3>
+      <div class="projects-grid mt-8">
+        <div class="project-card">
+          <img src="assets/calendar.png" alt="Calendar UI">
+          <div class="project-info">
+            <h3>Calendar App (UI)</h3>
+            <p>Calendar built with Python/Tkinter. Clean date navigation and UI for scheduling.</p>
+            <a class="btn" href="https://github.com/PreetamPrashantShet/calendar-app" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/profile.jpg" alt="Portfolio">
+          <div class="project-info">
+            <h3>Personal Portfolio</h3>
+            <p>Modern responsive portfolio with dark/light mode, animations and contact form.</p>
+            <a class="btn" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View repo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-12">
+      <h3 class="cat-title">AI / ML Projects</h3>
+      <div class="project-card mt-8">
+        <img src="assets/water_dashboard.png" alt="Water Dashboard">
+        <div class="project-info">
+          <h3>Seasonal Reservoir Water Level Prediction</h3>
+          <p>Predicts seasonal reservoir water levels using XGBoost and NeuralProphet. Feature engineering includes rolling averages and timestamp features. Streamlit dashboard for visualization and deployment — supports sustainable water resource planning.</p>
+          <ul class="feature-list">
+            <li>XGBoost Regression</li>
+            <li>NeuralProphet Forecasting</li>
+            <li>Streamlit Dashboard</li>
+          </ul>
+          <a class="btn" href="https://github.com/PreetamPrashantShet/Week-3-Aicte-Internship" target="_blank" rel="noopener noreferrer">View Internship Repo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="connect-section reveal mt-18">
+  <h2 class="connect-title">Connect With Me</h2>
+
+  <div class="social-links">
+    <a href="https://www.instagram.com/preetam_shet77?igsh=ZWtsY2Y5d3pweHpn" 
+       target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+      <img src="assets/icons/instagram.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1" 
+       target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+      <img src="assets/icons/linkedin.png" alt="LinkedIn">
+    </a>
+
+    <a href="https://www.snapchat.com/add/preetampshet24" 
+       target="_blank" rel="noopener noreferrer" class="social-btn" title="Snapchat">
+      <img src="assets/icons/snapchat.png" alt="Snapchat">
+    </a>
+  </div>
+</section>
+
+
+  <section id="contact" class="card reveal mt-18">
+    <h2>Contact</h2>
+    <p class="text-muted">Send me a message — delivered to my email via Formspree.</p>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/meoneonp" method="POST">
+      <input class="input" name="name" type="text" placeholder="Your name" required>
+      <input class="input" name="email" type="email" placeholder="Your email" required>
+      <textarea class="input" name="message" rows="6" placeholder="Message" required></textarea>
+      <button class="submit" type="submit">Send Message</button>
+      <div id="status" class="text-muted mt-6"></div>
+    </form>
+  </section>
+
+  <footer class="footer">© 2025 Preetam Prashant Shet • Built for GitHub Pages</footer>
+</div>
+
+<script>
+// reveal on load
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+
+// theme toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.onclick = ()=>{
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+};
+if(localStorage.getItem('theme')==='light'){ document.documentElement.classList.add('light'); themeToggle.textContent='☀️'; } else themeToggle.textContent='🌙';
+
+// contact form submit handling (Formspree)
+const form = document.getElementById('contactForm');
+const status = document.getElementById('status');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(form);
+  status.textContent = 'Sending...';
+  fetch(form.action, {method:form.method, body:data, headers:{Accept:'application/json'}}).then(res=>{
+    if(res.ok){ status.textContent='✔ Message sent! I will reply soon.'; status.style.color='#7fffd4'; form.reset(); }
+    else { res.json().then(j=>{ status.textContent = (j && j.error) ? j.error : 'Oops! Something went wrong.'; status.style.color='#ff6b6b'; }).catch(()=>{ status.textContent='Oops! Something went wrong.'; status.style.color='#ff6b6b'; }); }
+  }).catch(()=>{ status.textContent='Network error. Try again.'; status.style.color='#ff6b6b'; });
+});
+</script>
+</body>
+</html>
