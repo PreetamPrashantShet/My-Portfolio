@@ -1,189 +1,578 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Preetam Prashant Shet — Portfolio</title><link rel="stylesheet" href="styles.css"></head>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Preetam Prashant Shet — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<div class="container">
 
-  <div class="topbar">
-    <div class="brand">
-      <div class="avatar"><img src="assets/profile.jpg" alt="Preetam"></div>
-      <div class="title"><h1>Preetam Prashant Shet</h1><p>B.Tech — Information Science & Engineering • GM University</p></div>
+<!-- ── Floating sakura petals canvas ── -->
+<canvas id="sakura"></canvas>
+
+<!-- ── Ambient orbs ── -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <div class="nav-avatar">
+      <img src="assets/profile.jpg" alt="Preetam">
+      <div class="nav-avatar-ring"></div>
     </div>
-
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button class="theme" id="themeToggle" title="Toggle theme">🌙</button>
-    </nav>
+    <div class="nav-title">
+      <span class="nav-name">Preetam Prashant Shet</span>
+      <span class="nav-subtitle">情報科学・エンジニアリング</span>
+    </div>
   </div>
+  <div class="nav-links">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#certifications" class="nav-link">Certs</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <button class="theme-btn" id="themeToggle" title="Toggle theme">🌸</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <section id="home" class="hero reveal mt-18">
-    <div class="card bio">
-      <h2>Hello — I’m Preetam 👋</h2>
-      <p>I am an aspiring software developer with a strong foundation in frontend engineering, UI/UX design, and machine learning applications. Currently pursuing B.Tech in Information Science & Engineering (2023–2027) at GM University, I focus on building clean, responsive, and user-friendly digital experiences.
+<!-- ── Mobile nav drawer ── -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#skills" class="nav-link">Skills</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#certifications" class="nav-link">Certs</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</div>
 
-My interests include developing interactive web interfaces, designing modern dashboard systems, and applying machine learning to solve practical, real-world problems — especially in the areas of automation and sustainability.
-I enjoy working with technologies such as HTML, CSS, JavaScript, Python, C++, XGBoost, and Streamlit, and constantly aim to improve my skills through hands-on projects and internships.
+<main class="main">
 
-I believe in writing clean code, designing thoughtfully, and building solutions that truly make a difference.</p>
+  <!-- ── HERO ── -->
+  <section id="home" class="hero">
+    <div class="hero-content fade-up">
 
-      <div class="skills mt-12">
-        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-        <span class="tag">C++</span><span class="tag">Python</span><span class="tag">XGBoost</span>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">ようこそ · Welcome</span>
+        <span class="eyebrow-line"></span>
       </div>
 
-      <h3 class="mt-18">Featured</h3>
-      <div class="projects-grid mt-8">
-        <a class="project-card" href="#projects"><img src="assets/profile.jpg" alt="portfolio"><div class="project-meta">Portfolio</div></a>
-        <a class="project-card" href="#projects"><img src="assets/calendar.png" alt="calendar"><div class="project-meta">Calendar App</div></a>
+      <h1 class="hero-title">
+        Hello, I'm
+        <span class="hero-name">Preetam</span>
+        <span class="hero-wave">👋</span>
+      </h1>
+
+      <p class="hero-desc">Aspiring software developer with a passion for frontend engineering, UI/UX design, and machine learning. Pursuing B.Tech in Information Science &amp; Engineering (2023–2027) at GM University — building beautiful, purposeful digital experiences.</p>
+
+      <div class="hero-tags">
+        <span class="htag">HTML</span>
+        <span class="htag">CSS</span>
+        <span class="htag">JavaScript</span>
+        <span class="htag">Python</span>
+        <span class="htag">C++</span>
+        <span class="htag">XGBoost</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#projects">
+          <span class="btn-shine"></span>
+          <span>View My Work</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a class="btn-ghost" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">
+          <span>GitHub Profile</span>
+        </a>
       </div>
     </div>
 
-    <aside class="card profile reveal">
-      <div class="profile">
-        <img src="assets/profile.jpg" alt="Preetam photo">
-        <div><strong>Preetam Prashant Shet</strong></div>
-        <div class="text-muted mt-6">Algeri, Ankola, Uttara Kannada(D), Karnataka</div>
-        <div class="text-muted mt-6">preetam.prashant866@gmail.com • 8660786561</div>
-        <a class="btn btn-space" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View GitHub</a>
+    <div class="hero-profile fade-up fade-up-delay">
+      <div class="profile-frame">
+        <div class="profile-ring ring-1"></div>
+        <div class="profile-ring ring-2"></div>
+        <div class="profile-ring ring-3"></div>
+        <div class="profile-img-wrap">
+          <img src="assets/profile.jpg" alt="Preetam Prashant Shet">
+        </div>
+        <div class="profile-sparkle sp-1">✦</div>
+        <div class="profile-sparkle sp-2">✦</div>
+        <div class="profile-sparkle sp-3">✦</div>
+        <div class="profile-sparkle sp-4">✦</div>
       </div>
-    </aside>
-  </section>
 
-  <section id="skills" class="card reveal mt-18">
-    <h2>Skills & Tools</h2>
-    <div class="skills mt-8">
-      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-      <span class="tag">React</span><span class="tag">C++</span><span class="tag">Python</span>
-      <span class="tag">XGBoost</span><span class="tag">NeuralProphet</span><span class="tag">Streamlit</span>
+      <div class="profile-info-card">
+        <p class="info-name">Preetam Prashant Shet</p>
+        <p class="info-loc">📍 Algeri, Ankola, Karnataka</p>
+        <p class="info-email">✉ preetam.prashant866@gmail.com</p>
+        <p class="info-phone">📞 8660786561</p>
+      </div>
     </div>
-    <div class="text-muted mt-12">Tools: VS Code • Git • GitHub • Chrome DevTools • Streamlit</div>
   </section>
 
-  <section id="projects" class="reveal mt-18">
-    <h2>Projects</h2>
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section fade-up">
+    <div class="section-head">
+      <span class="section-jp">スキル</span>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <div class="section-deco"></div>
+    </div>
 
-    <div class="card mt-12">
-      <h3 class="cat-title">C++ Projects</h3>
-      <div class="project-card block">
-        <img src="assets/exam_sorting.png" alt="Exam Sorting">
-        <div class="project-info">
-          <h3>Examination Result Sorting System</h3>
-          <p>A file-based system that reads unsorted student result records and performs in-place sorting by percentage. Supports Binary Search and key-based indexing for fast retrieval. Backend written in C++ with file I/O optimizations.</p>
-          <ul class="feature-list">
-            <li>In-place sorting (percentage)</li>
+    <div class="skills-grid">
+      <div class="skill-card" data-index="0">
+        <div class="skill-icon">🌐</div>
+        <h3 class="skill-name">Frontend</h3>
+        <div class="skill-tags">
+          <span class="stag">HTML</span>
+          <span class="stag">CSS</span>
+          <span class="stag">JavaScript</span>
+          <span class="stag">React</span>
+          <span class="stag">TypeScript</span>
+        </div>
+      </div>
+      <div class="skill-card" data-index="1">
+        <div class="skill-icon">⚙️</div>
+        <h3 class="skill-name">Backend &amp; Systems</h3>
+        <div class="skill-tags">
+          <span class="stag">Python</span>
+          <span class="stag">FastAPI</span>
+          <span class="stag">C++</span>
+          <span class="stag">Node.js</span>
+          <span class="stag">Docker</span>
+        </div>
+      </div>
+      <div class="skill-card" data-index="2">
+        <div class="skill-icon">🤖</div>
+        <h3 class="skill-name">AI / ML</h3>
+        <div class="skill-tags">
+          <span class="stag">XGBoost</span>
+          <span class="stag">NeuralProphet</span>
+          <span class="stag">Streamlit</span>
+          <span class="stag">Gemini API</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--i:3">
+        <div class="skill-icon">🛠</div>
+        <h3 class="skill-name">Tools</h3>
+        <div class="skill-tags">
+          <span class="stag">VS Code</span>
+          <span class="stag">Git</span>
+          <span class="stag">GitHub</span>
+          <span class="stag">Prometheus</span>
+          <span class="stag">Grafana</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section fade-up">
+    <div class="section-head">
+      <span class="section-jp">プロジェクト</span>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-deco"></div>
+    </div>
+
+    <!-- C++ -->
+    <div class="proj-category">
+      <div class="cat-badge">C++ Projects</div>
+      <div class="proj-featured">
+        <div class="proj-img-wrap">
+          <img src="assets/exam_sorting.png" alt="Exam Sorting">
+          <div class="proj-img-glow"></div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Examination Result Sorting System</h3>
+          <p class="proj-desc">A file-based system that reads unsorted student result records and performs in-place sorting by percentage. Supports Binary Search and key-based indexing for fast retrieval. Backend written in C++ with file I/O optimizations.</p>
+          <ul class="proj-features">
+            <li>In-place sorting by percentage</li>
             <li>Binary Search for fast retrieval</li>
             <li>Key-indexing for instant lookup</li>
           </ul>
-          <a class="btn" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a class="btn-primary" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">
+            <span class="btn-shine"></span>
+            <span>View on GitHub</span>
+            <span class="btn-arrow">→</span>
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="card mt-12">
-      <h3 class="cat-title">Web & UI Projects</h3>
-      <div class="projects-grid mt-8">
-        <div class="project-card">
-          <img src="assets/calendar.png" alt="Calendar UI">
-          <div class="project-info">
-            <h3>Calendar App (UI)</h3>
-            <p>Calendar built with Python/Tkinter. Clean date navigation and UI for scheduling.</p>
-            <a class="btn" href="https://github.com/PreetamPrashantShet/calendar-app" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    <!-- Web & UI -->
+    <div class="proj-category">
+      <div class="cat-badge">Web &amp; UI Projects</div>
+      <div class="proj-grid">
+
+        <div class="proj-card">
+          <div class="proj-card-img">
+            <img src="assets/calendar.png" alt="Calendar UI">
+            <div class="proj-card-overlay">
+              <a class="btn-primary" href="https://github.com/PreetamPrashantShet/calendar-app" target="_blank" rel="noopener noreferrer">
+                <span class="btn-shine"></span><span>View on GitHub</span><span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <h3 class="proj-card-title">Calendar App (UI)</h3>
+            <p class="proj-card-desc">Calendar built with Python/Tkinter. Clean date navigation and UI for scheduling.</p>
           </div>
         </div>
 
-        <div class="project-card">
-          <img src="assets/profile.jpg" alt="Portfolio">
-          <div class="project-info">
-            <h3>Personal Portfolio</h3>
-            <p>Modern responsive portfolio with dark/light mode, animations and contact form.</p>
-            <a class="btn" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">View repo</a>
+        <div class="proj-card">
+          <div class="proj-card-img">
+            <img src="assets/profile.jpg" alt="Portfolio">
+            <div class="proj-card-overlay">
+              <a class="btn-primary" href="https://github.com/PreetamPrashantShet" target="_blank" rel="noopener noreferrer">
+                <span class="btn-shine"></span><span>View Repo</span><span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <h3 class="proj-card-title">Personal Portfolio</h3>
+            <p class="proj-card-desc">Modern responsive portfolio with dark/light mode, animations and contact form.</p>
           </div>
         </div>
+
+        <div class="proj-card proj-card-no-img">
+          <div class="proj-card-icon">🚀</div>
+          <div class="proj-card-body">
+            <h3 class="proj-card-title">AI-Powered Monitoring Dashboard</h3>
+            <p class="proj-card-desc">Real-time monitoring with Node.js, Prometheus, and Grafana. Fully Dockerized.</p>
+            <ul class="proj-features">
+              <li>Prometheus scraping &amp; Grafana visualization</li>
+              <li>Tracks CPU, Memory, Response Time</li>
+              <li>One-command Docker Compose setup</li>
+            </ul>
+            <a class="btn-primary" href="https://github.com/PreetamPrashantShet/monitoring-dashboard" target="_blank" rel="noopener noreferrer">
+              <span class="btn-shine"></span><span>View on GitHub</span><span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="card mt-12">
-      <h3 class="cat-title">AI / ML Projects</h3>
-      <div class="project-card mt-8">
-        <img src="assets/water_dashboard.png" alt="Water Dashboard">
-        <div class="project-info">
-          <h3>Seasonal Reservoir Water Level Prediction</h3>
-          <p>Predicts seasonal reservoir water levels using XGBoost and NeuralProphet. Feature engineering includes rolling averages and timestamp features. Streamlit dashboard for visualization and deployment — supports sustainable water resource planning.</p>
-          <ul class="feature-list">
+    <!-- AI / ML -->
+    <div class="proj-category">
+      <div class="cat-badge cat-badge-purple">AI / ML Projects</div>
+
+      <div class="proj-featured proj-featured-reverse">
+        <div class="proj-img-wrap">
+          <img src="assets/water_dashboard.png" alt="Water Dashboard">
+          <div class="proj-img-glow proj-img-glow-purple"></div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Seasonal Reservoir Water Level Prediction</h3>
+          <p class="proj-desc">Predicts seasonal reservoir water levels using XGBoost and NeuralProphet. Feature engineering includes rolling averages and timestamp features. Streamlit dashboard for visualization and deployment.</p>
+          <ul class="proj-features">
             <li>XGBoost Regression</li>
             <li>NeuralProphet Forecasting</li>
             <li>Streamlit Dashboard</li>
           </ul>
-          <a class="btn" href="https://github.com/PreetamPrashantShet/Week-3-Aicte-Internship" target="_blank" rel="noopener noreferrer">View Internship Repo</a>
+          <a class="btn-primary btn-purple" href="https://github.com/PreetamPrashantShet/Week-3-Aicte-Internship" target="_blank" rel="noopener noreferrer">
+            <span class="btn-shine"></span><span>View Internship Repo</span><span class="btn-arrow">→</span>
+          </a>
         </div>
+      </div>
+
+      <div class="proj-grid">
+
+        <div class="proj-card proj-card-no-img">
+          <div class="proj-card-icon">🤖</div>
+          <div class="proj-card-body">
+            <h3 class="proj-card-title">AI Incident Postmortem Generator</h3>
+            <p class="proj-card-desc">Auto-generates structured postmortem reports using Gemini API. React/TypeScript + FastAPI.</p>
+            <ul class="proj-features">
+              <li>Gemini API for intelligent generation</li>
+              <li>FastAPI + React/TypeScript stack</li>
+              <li>Timeline, root cause &amp; action items</li>
+            </ul>
+            <a class="btn-primary btn-purple" href="https://github.com/PreetamPrashantShet/AI-Incident-Postmortem-Generator" target="_blank" rel="noopener noreferrer">
+              <span class="btn-shine"></span><span>View on GitHub</span><span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card proj-card-no-img">
+          <div class="proj-card-icon">🔬</div>
+          <div class="proj-card-body">
+            <h3 class="proj-card-title">DeepFake Forensics Lab</h3>
+            <p class="proj-card-desc">Professional deepfake detection platform using 5 forensics techniques + audio-visual validation.</p>
+            <ul class="proj-features">
+              <li>Image: ELA, FFT Spectrum, Landmarks</li>
+              <li>Video: Temporal Consistency &amp; GAN Fingerprint</li>
+              <li>Audio: MFCC &amp; Cloned Speech Detection</li>
+            </ul>
+            <a class="btn-primary btn-purple" href="https://github.com/PreetamPrashantShet/Deepfake-Detection" target="_blank" rel="noopener noreferrer">
+              <span class="btn-shine"></span><span>View on GitHub</span><span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-  <section class="connect-section reveal mt-18">
-  <h2 class="connect-title">Connect With Me</h2>
 
-  <div class="social-links">
-    <a href="https://www.instagram.com/preetam_shet77?igsh=ZWtsY2Y5d3pweHpn" 
-       target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
-      <img src="assets/icons/instagram.png" alt="Instagram">
-    </a>
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifications" class="section fade-up">
+    <div class="section-head">
+      <span class="section-jp">資格</span>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-deco"></div>
+    </div>
 
-    <a href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1" 
-       target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
-      <img src="assets/icons/linkedin.png" alt="LinkedIn">
-    </a>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-ribbon">Udemy</div>
+        <div class="cert-stars">★★★★★</div>
+        <div class="cert-icon">🗄</div>
+        <h3 class="cert-title">SQL — MySQL for Data Analytics &amp; Business Intelligence</h3>
+        <p class="cert-desc">Advanced SQL querying, data analysis techniques, and business intelligence workflows using MySQL.</p>
+        <a class="btn-primary" href="https://www.udemy.com/certificate/UC-921b6251-0dd1-484f-8ec1-6859f430bd29/" target="_blank" rel="noopener noreferrer">
+          <span class="btn-shine"></span><span>View Certificate</span><span class="btn-arrow">→</span>
+        </a>
+      </div>
 
-    <a href="https://www.snapchat.com/add/preetampshet24" 
-       target="_blank" rel="noopener noreferrer" class="social-btn" title="Snapchat">
-      <img src="assets/icons/snapchat.png" alt="Snapchat">
-    </a>
-  </div>
-</section>
-
-
-  <section id="contact" class="card reveal mt-18">
-    <h2>Contact</h2>
-    <p class="text-muted">Send me a message — delivered to my email via Formspree.</p>
-
-    <form id="contactForm" class="contact-form" action="https://formspree.io/f/meoneonp" method="POST">
-      <input class="input" name="name" type="text" placeholder="Your name" required>
-      <input class="input" name="email" type="email" placeholder="Your email" required>
-      <textarea class="input" name="message" rows="6" placeholder="Message" required></textarea>
-      <button class="submit" type="submit">Send Message</button>
-      <div id="status" class="text-muted mt-6"></div>
-    </form>
+      <div class="cert-card">
+        <div class="cert-ribbon">Udemy</div>
+        <div class="cert-stars">★★★★★</div>
+        <div class="cert-icon">💻</div>
+        <h3 class="cert-title">The Complete Full-Stack Web Development Bootcamp</h3>
+        <p class="cert-desc">Comprehensive full-stack training covering frontend, backend, databases, and deployment.</p>
+        <a class="btn-primary" href="https://www.udemy.com/certificate/UC-932aa977-10ae-4175-b8e3-88d53aa4a2e0/" target="_blank" rel="noopener noreferrer">
+          <span class="btn-shine"></span><span>View Certificate</span><span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
   </section>
 
-  <footer class="footer">© 2025 Preetam Prashant Shet • Built for GitHub Pages</footer>
-</div>
+  <!-- ── CONNECT ── -->
+  <section class="section connect-section fade-up">
+    <div class="section-head">
+      <span class="section-jp">つながる</span>
+      <h2 class="section-title">Connect With Me</h2>
+      <div class="section-deco"></div>
+    </div>
+    <div class="social-row">
+      <a href="https://www.instagram.com/preetam_shet77?igsh=ZWtsY2Y5d3pweHpn" target="_blank" rel="noopener noreferrer" class="social-card" title="Instagram">
+        <div class="social-glow"></div>
+        <img src="assets/icons/instagram.png" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1" target="_blank" rel="noopener noreferrer" class="social-card" title="LinkedIn">
+        <div class="social-glow"></div>
+        <img src="assets/icons/linkedin.png" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://www.snapchat.com/add/preetampshet24" target="_blank" rel="noopener noreferrer" class="social-card" title="Snapchat">
+        <div class="social-glow"></div>
+        <img src="assets/icons/snapchat.png" alt="Snapchat">
+        <span>Snapchat</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section fade-up">
+    <div class="section-head">
+      <span class="section-jp">連絡</span>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="section-deco"></div>
+    </div>
+    <div class="contact-wrap">
+      <p class="contact-sub">Send me a message — delivered to my inbox via Formspree ✨</p>
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/meoneonp" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" name="name" type="text" placeholder="Sakura Tanaka" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Email</label>
+            <input class="form-input" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input form-textarea" name="message" rows="5" placeholder="Hi Preetam, I'd love to connect..." required></textarea>
+        </div>
+        <button class="btn-primary btn-submit" type="submit">
+          <span class="btn-shine"></span>
+          <span>Send Message 🌸</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <div id="status" class="form-status"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-jp">ありがとう</span>
+    <span class="footer-text">© 2025 Preetam Prashant Shet · Built with ❤️ for GitHub Pages</span>
+  </div>
+</footer>
 
 <script>
-// reveal on load
-document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+/* ── Sakura Petal Canvas ── */
+const canvas = document.getElementById('sakura');
+const ctx = canvas.getContext('2d');
+let W, H, petals = [];
 
-// theme toggle
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function randomPetal() {
+  return {
+    x: Math.random() * W,
+    y: Math.random() * -H,
+    r: Math.random() * 8 + 4,
+    speed: Math.random() * 1.2 + 0.4,
+    drift: Math.random() * 1 - 0.5,
+    rot: Math.random() * Math.PI * 2,
+    rotSpeed: (Math.random() - 0.5) * 0.04,
+    alpha: Math.random() * 0.5 + 0.3,
+    hue: Math.random() * 20 + 340
+  };
+}
+
+for (let i = 0; i < 35; i++) {
+  const p = randomPetal();
+  p.y = Math.random() * H;
+  petals.push(p);
+}
+
+function drawPetal(p) {
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(p.rot);
+  ctx.globalAlpha = p.alpha;
+  ctx.fillStyle = `hsl(${p.hue},80%,80%)`;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, p.r, p.r * 0.55, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function animatePetals() {
+  ctx.clearRect(0, 0, W, H);
+  petals.forEach(p => {
+    p.y += p.speed;
+    p.x += p.drift + Math.sin(p.y * 0.015) * 0.5;
+    p.rot += p.rotSpeed;
+    drawPetal(p);
+    if (p.y > H + 20) { Object.assign(p, randomPetal()); }
+  });
+  requestAnimationFrame(animatePetals);
+}
+animatePetals();
+
+/* ── Scroll reveal ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up, .skill-card, .proj-card, .cert-card, .social-card').forEach(el => revealObserver.observe(el));
+
+/* ── Staggered skill cards ── */
+document.querySelectorAll('.skill-card').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.1) + 's';
+});
+
+/* ── Navbar scroll shrink ── */
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('nav-shrunk', window.scrollY > 60);
+});
+
+/* ── Active nav link ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+/* ── Hamburger menu ── */
+const hamburger = document.getElementById('hamburger');
+const navDrawer = document.getElementById('navDrawer');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navDrawer.classList.toggle('open');
+});
+navDrawer.querySelectorAll('.nav-link').forEach(l => {
+  l.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navDrawer.classList.remove('open');
+  });
+});
+
+/* ── Theme toggle ── */
 const themeToggle = document.getElementById('themeToggle');
-themeToggle.onclick = ()=>{
-  const isLight = document.documentElement.classList.toggle('light');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  themeToggle.textContent = isLight ? '☀️' : '🌙';
-};
-if(localStorage.getItem('theme')==='light'){ document.documentElement.classList.add('light'); themeToggle.textContent='☀️'; } else themeToggle.textContent='🌙';
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeToggle.textContent = theme === 'light' ? '🌙' : '🌸';
+  localStorage.setItem('theme', theme);
+}
+applyTheme(localStorage.getItem('theme') || 'dark');
+themeToggle.addEventListener('click', () => {
+  const curr = document.documentElement.getAttribute('data-theme');
+  applyTheme(curr === 'light' ? 'dark' : 'light');
+});
 
-// contact form submit handling (Formspree)
+/* ── Contact form ── */
 const form = document.getElementById('contactForm');
 const status = document.getElementById('status');
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', function(e) {
   e.preventDefault();
   const data = new FormData(form);
-  status.textContent = 'Sending...';
-  fetch(form.action, {method:form.method, body:data, headers:{Accept:'application/json'}}).then(res=>{
-    if(res.ok){ status.textContent='✔ Message sent! I will reply soon.'; status.style.color='#7fffd4'; form.reset(); }
-    else { res.json().then(j=>{ status.textContent = (j && j.error) ? j.error : 'Oops! Something went wrong.'; status.style.color='#ff6b6b'; }).catch(()=>{ status.textContent='Oops! Something went wrong.'; status.style.color='#ff6b6b'; }); }
-  }).catch(()=>{ status.textContent='Network error. Try again.'; status.style.color='#ff6b6b'; });
+  status.textContent = 'Sending ✨...';
+  status.className = 'form-status';
+  fetch(form.action, { method: form.method, body: data, headers: { Accept: 'application/json' } })
+    .then(res => {
+      if (res.ok) {
+        status.textContent = '🌸 Message sent! I\'ll reply soon.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        status.textContent = '😢 Something went wrong. Try again!';
+        status.className = 'form-status error';
+      }
+    })
+    .catch(() => {
+      status.textContent = '😢 Network error. Try again!';
+      status.className = 'form-status error';
+    });
+});
+
+/* ── Cursor sparkle ── */
+document.addEventListener('click', function(e) {
+  for (let i = 0; i < 6; i++) {
+    const s = document.createElement('div');
+    s.className = 'cursor-spark';
+    s.style.left = e.clientX + 'px';
+    s.style.top  = e.clientY + 'px';
+    s.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+    s.style.setProperty('--dy', (Math.random() * 80 - 40) + 'px');
+    s.style.setProperty('--hue', Math.random() * 60 + 310);
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 700);
+  }
 });
 </script>
 </body>
