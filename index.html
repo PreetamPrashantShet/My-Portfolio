@@ -2,340 +2,1406 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Preetam Prashant Shet — Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Preetam Prashant Shet — Full-Stack & AI Engineer | Gaming Portfolio
+    </title>
+    <meta
+      name="description"
+      content="Portfolio of Preetam Prashant Shet, Information Science Engineering student at GM University. Full-Stack developer, AI/ML explorer, and competitive programmer."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Interactive Background Particle Grid Canvas -->
+    <canvas id="cyberCanvas"></canvas>
+
     <div class="container">
-      <div class="topbar">
+      <!-- ====================================================================
+           1. TOPBAR / GAMER HUD
+           ==================================================================== -->
+      <header class="topbar">
         <div class="brand">
-          <div class="avatar">
-            <img src="assets/profile.jpg" alt="Preetam" />
+          <div class="brand-avatar">
+            <img src="assets/profile.jpg" alt="Preetam Prashant Shet" />
+            <span
+              class="online-indicator"
+              title="Online: Ready for Opportunities"
+            ></span>
           </div>
-          <div class="title">
-            <h1>Preetam Prashant Shet</h1>
-            <p>B.Tech — Information Science & Engineering • GM University</p>
+          <div class="brand-info">
+            <h1>
+              PREETAM SHET
+              <span class="tag-lvl">LVL 20 ISE</span>
+            </h1>
+            <p>GM University • B.Tech ISE • CGPA 8.2</p>
           </div>
         </div>
 
         <nav class="nav">
-          <a href="#home">Home</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <button class="theme" id="themeToggle" title="Toggle theme">
-            🌙
-          </button>
+          <ul class="nav-menu">
+            <li>
+              <a href="#home" class="nav-link"><span>⚡</span> Profile</a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-link highlight-btn"
+                ><span>🚀</span> My Project Work</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="nav-link"><span>⚔️</span> Arsenal</a>
+            </li>
+            <li>
+              <a href="#quest-log" class="nav-link"
+                ><span>📜</span> Quest Log</a
+              >
+            </li>
+            <li>
+              <a href="#game" class="nav-link"><span>🎮</span> Arcade Game</a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link"><span>📡</span> Comms</a>
+            </li>
+          </ul>
         </nav>
-      </div>
 
-      <section id="home" class="hero reveal mt-18">
-        <div class="card bio">
-          <h2>Hello — I’m Preetam 👋</h2>
-          <p>
-            I am an aspiring software developer with a strong foundation in
-            frontend engineering, UI/UX design, and machine learning
-            applications. Currently pursuing B.Tech in Information Science &
-            Engineering (2023–2027) at GM University, I focus on building clean,
-            responsive, and user-friendly digital experiences. My interests
-            include developing interactive web interfaces, designing modern
-            dashboard systems, and applying machine learning to solve practical,
-            real-world problems — especially in the areas of automation and
-            sustainability. I enjoy working with technologies such as HTML, CSS,
-            JavaScript, Python, C++, XGBoost, and Streamlit, and constantly aim
-            to improve my skills through hands-on projects and internships. I
-            believe in writing clean code, designing thoughtfully, and building
-            solutions that truly make a difference.
-          </p>
+        <div class="hud-controls">
+          <button id="sfxToggle" class="hud-btn" title="Toggle 8-Bit Sound FX">
+            <span class="icon">🔇</span> SFX OFF
+          </button>
+          <button
+            id="themeToggle"
+            class="hud-btn"
+            title="Toggle Cyber Dark / Synth Light"
+          >
+            <span class="icon">🌙</span> CYBER DARK
+          </button>
+        </div>
+      </header>
 
-          <div class="skills mt-12">
-            <span class="tag">HTML</span><span class="tag">CSS</span
-            ><span class="tag">JavaScript</span> <span class="tag">C++</span
-            ><span class="tag">Python</span><span class="tag">XGBoost</span>
+      <!-- ====================================================================
+           2. HERO / PLAYER OVERVIEW SECTION
+           ==================================================================== -->
+      <section id="home" class="hero-grid">
+        <!-- Main Bio Card -->
+        <div class="card hero-bio reveal">
+          <div>
+            <div class="hud-pill">
+              <span>●</span> SYSTEM STATUS: ONLINE // QUEST ACTIVE
+            </div>
+            <h2>Hello, I'm <span class="glow-cyan">Preetam Shet</span> 👋</h2>
+            <div class="hero-subtitle">
+              <span>&gt; </span
+              ><span id="dynamicRole">Full-Stack Developer</span
+              ><span class="typing-cursor"></span>
+            </div>
+            <p class="bio-text">
+              Results-driven
+              <strong>Information Science Engineering</strong> student at
+              <strong>GM University</strong> (CGPA: 8.2) with a passion for
+              software development, full-stack web applications, AI/ML
+              forecasting, and competitive problem solving. Experienced in
+              architecting robust solutions with Python, C++, React.js, FastAPI,
+              Node.js, and Docker. Always ready to conquer challenging technical
+              quests and solve real-world problems!
+            </p>
+
+            <!-- Gamer Stat Chips -->
+            <div class="stats-strip">
+              <a
+                href="https://leetcode.com/u/Preetam_Shet77"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stat-chip highlight-gold"
+                title="View LeetCode Profile"
+              >
+                <span class="stat-num">⚡ LeetCode</span>
+                <span class="stat-label">Preetam_Shet77</span>
+              </a>
+              <a
+                href="https://github.com/PreetamPrashantShet"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stat-chip"
+                title="View GitHub Repositories"
+              >
+                <span class="stat-num">🚀 GitHub</span>
+                <span class="stat-label">6+ Public Projects</span>
+              </a>
+              <div class="stat-chip">
+                <span class="stat-num">8.2</span>
+                <span class="stat-label">CGPA (GMU ISE)</span>
+              </div>
+              <div class="stat-chip">
+                <span class="stat-num">2027</span>
+                <span class="stat-label">Graduation Year</span>
+              </div>
+            </div>
           </div>
 
-          <h3 class="mt-18">Featured</h3>
-          <div class="projects-grid mt-8">
-            <a class="project-card" href="#projects"
-              ><img src="assets/profile.jpg" alt="portfolio" />
-              <div class="project-meta">Portfolio</div></a
+          <!-- CTAs -->
+          <div class="cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>🚀</span> My Project Work
+            </a>
+            <a href="#game" class="btn btn-arcade">
+              <span>🎮</span> Play Bug Buster 2077
+            </a>
+            <button class="btn btn-outline open-resume-btn" type="button">
+              <span>📄</span> View Resume
+            </button>
+            <a
+              href="https://wa.me/918660786561?text=Hello%20Preetam,%20I%20saw%20your%20portfolio!"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp"
             >
-            <a class="project-card" href="#projects"
-              ><img src="assets/calendar.png" alt="calendar" />
-              <div class="project-meta">Calendar App</div></a
-            >
+              <span>💬</span> WhatsApp
+            </a>
           </div>
         </div>
 
-        <aside class="card profile reveal">
-          <div class="profile">
-            <img src="assets/profile.jpg" alt="Preetam photo" />
-            <div><strong>Preetam Prashant Shet</strong></div>
-            <div class="text-muted mt-6">
-              Algeri, Ankola, Uttara Kannada(D), Karnataka
+        <!-- Gamer Player Card (Sidebar) -->
+        <aside class="card hero-player-card reveal">
+          <div class="player-avatar-wrap">
+            <img src="assets/profile.jpg" alt="Preetam Avatar" />
+            <div class="player-rank-badge">RANK: CODE KNIGHT</div>
+          </div>
+
+          <div class="player-details">
+            <h3>Preetam Prashant Shet</h3>
+            <p class="player-role">Information Science Engineer</p>
+            <p
+              class="code-font"
+              style="font-size: 0.75rem; color: var(--text-muted)"
+            >
+              📍 Algeri, Ankola, Uttara Kannada, Karnataka
+            </p>
+          </div>
+
+          <!-- Gamer HP & XP Bars -->
+          <div class="player-bars">
+            <div class="bar-wrap">
+              <div class="bar-label">
+                <span>HP (Energy & Dedication)</span>
+                <span>100 / 100</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill hp" style="width: 100%"></div>
+              </div>
             </div>
-            <div class="text-muted mt-6">
-              preetam.prashant866@gmail.com • 8660786561
+            <div class="bar-wrap">
+              <div class="bar-label">
+                <span>XP (Skill Level 20)</span>
+                <span>9,250 / 10,000</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill xp" style="width: 92%"></div>
+              </div>
             </div>
+          </div>
+
+          <!-- Quick Channel Links -->
+          <div class="player-links">
             <a
-              class="btn btn-space"
               href="https://github.com/PreetamPrashantShet"
               target="_blank"
               rel="noopener noreferrer"
-              >View GitHub</a
+              class="player-link-btn"
+              title="GitHub"
             >
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://leetcode.com/u/Preetam_Shet77"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="player-link-btn"
+              title="LeetCode"
+            >
+              <span>LeetCode</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="player-link-btn"
+              title="LinkedIn"
+            >
+              <span>LinkedIn</span>
+            </a>
           </div>
         </aside>
       </section>
 
-      <section id="skills" class="card reveal mt-18">
-        <h2>Skills & Tools</h2>
-        <div class="skills mt-8">
-          <span class="tag">HTML</span><span class="tag">CSS</span
-          ><span class="tag">JavaScript</span> <span class="tag">React</span
-          ><span class="tag">C++</span><span class="tag">Python</span>
-          <span class="tag">XGBoost</span><span class="tag">NeuralProphet</span
-          ><span class="tag">Streamlit</span>
+      <!-- ====================================================================
+           3. MY PROJECT WORK (FEATURED & FULL SHOWCASE)
+           ==================================================================== -->
+      <section id="projects" class="projects-section reveal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="accent-bracket">[</span> MY PROJECT WORK
+              <span class="accent-bracket">]</span>
+            </h2>
+            <p class="section-subtitle">
+              &gt; Completed Quests in AI, Machine Learning, Web & Systems
+              Architecture
+            </p>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">
+              All Quests
+            </button>
+            <button class="filter-btn" data-filter="ai">AI / ML</button>
+            <button class="filter-btn" data-filter="web">
+              Full-Stack & Web
+            </button>
+            <button class="filter-btn" data-filter="systems">
+              C++ & Systems
+            </button>
+          </div>
         </div>
-        <div class="text-muted mt-12">
-          Tools: VS Code • Git • GitHub • Chrome DevTools • Streamlit
+
+        <div class="projects-grid">
+          <!-- Project 1: AI-Powered Digital Forensics Platform (TruthLens) -->
+          <article class="quest-card" data-category="ai web">
+            <div class="quest-banner">
+              <div class="quest-banner-placeholder">
+                <span class="placeholder-icon">🛡️</span>
+                <span>TRUTHLENS AI</span>
+              </div>
+              <span class="quest-rarity rarity-legendary">LEGENDARY</span>
+              <span class="quest-date">Jan 2025 – Mar 2025</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">
+                  AI-Powered Digital Forensics Platform (TruthLens)
+                </h3>
+                <p class="quest-desc">
+                  TruthLens is an AI-driven digital forensics platform designed
+                  to detect manipulated digital content (deepfakes, fake news)
+                  and enhance online trust. Features biometric authentication
+                  with facial recognition and liveness detection.
+                </p>
+                <ul class="quest-features">
+                  <li>
+                    Computer vision deepfake detection using OpenCV & MediaPipe
+                  </li>
+                  <li>
+                    TensorFlow Lite inference engine for low latency analysis
+                  </li>
+                  <li>
+                    Secure biometric authentication & liveness verification
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">TensorFlow Lite</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AI-Powered Incident Postmortem Generator -->
+          <article class="quest-card" data-category="ai web">
+            <div class="quest-banner">
+              <div class="quest-banner-placeholder" style="color: var(--green)">
+                <span class="placeholder-icon">🤖</span>
+                <span>GEMINI POSTMORTEM AI</span>
+              </div>
+              <span class="quest-rarity rarity-legendary">LEGENDARY</span>
+              <span class="quest-date">Jan 2026 – Feb 2026</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">
+                  AI-Powered Incident Postmortem Generator
+                </h3>
+                <p class="quest-desc">
+                  Automates the creation of structured, enterprise incident
+                  reports using Generative AI (Google Gemini API). Built with
+                  React.js, FastAPI, Python, and Firebase with automated root
+                  cause identification.
+                </p>
+                <ul class="quest-features">
+                  <li>
+                    Automated root cause identification & corrective actions
+                  </li>
+                  <li>
+                    Google Gemini API integration with structured prompt
+                    engineering
+                  </li>
+                  <li>REST APIs for seamless frontend-backend communication</li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">Google Gemini API</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">Vite</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Seasonal Reservoir Water Level Prediction -->
+          <article class="quest-card" data-category="ai">
+            <div class="quest-banner">
+              <img
+                src="assets/water_dashboard.png"
+                alt="Seasonal Reservoir Water Level Prediction"
+              />
+              <span class="quest-rarity rarity-epic">EPIC</span>
+              <span class="quest-date">Sep 2025 – Nov 2026</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">
+                  Seasonal Reservoir Water Level Prediction
+                </h3>
+                <p class="quest-desc">
+                  Predicts seasonal reservoir water levels using Machine
+                  Learning (XGBoost) and AI forecasting (NeuralProphet). Enables
+                  sustainable water resource management and energy planning
+                  aligned with Green Skills.
+                </p>
+                <ul class="quest-features">
+                  <li>XGBoost Regression & NeuralProphet Time-Series models</li>
+                  <li>
+                    Feature engineering: rolling averages & timestamp signals
+                  </li>
+                  <li>Interactive Streamlit dashboard visualization</li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">XGBoost</span>
+                  <span class="tech-tag">NeuralProphet</span>
+                  <span class="tech-tag">Streamlit</span>
+                  <span class="tech-tag">Pandas</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet/Week-3-Aicte-Internship"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>Internship Repo</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: AI-Powered Application Monitoring Dashboard -->
+          <article class="quest-card" data-category="web">
+            <div class="quest-banner">
+              <div class="quest-banner-placeholder" style="color: var(--gold)">
+                <span class="placeholder-icon">📊</span>
+                <span>METRICS & MONITORING</span>
+              </div>
+              <span class="quest-rarity rarity-epic">EPIC</span>
+              <span class="quest-date">Mar 2026 – May 2026</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">
+                  AI-Powered Application Monitoring Dashboard
+                </h3>
+                <p class="quest-desc">
+                  Collects live application telemetry including HTTP Requests,
+                  CPU Usage, Memory Consumption, and Response Time. Prometheus
+                  scrapes metrics and Grafana renders interactive dashboards
+                  inside Docker containers.
+                </p>
+                <ul class="quest-features">
+                  <li>Node.js & Express.js live telemetry collection</li>
+                  <li>Prometheus metrics scraping & alert configurations</li>
+                  <li>
+                    Grafana interactive visualization dashboards & Docker
+                    Compose
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express.js</span>
+                  <span class="tech-tag">Prometheus</span>
+                  <span class="tech-tag">Grafana</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Docker Compose</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: GMU College Examination Sorter Website -->
+          <article class="quest-card" data-category="systems web">
+            <div class="quest-banner">
+              <img
+                src="assets/exam_sorting.png"
+                alt="GMU Examination Result Sorting System"
+              />
+              <span class="quest-rarity rarity-rare">RARE</span>
+              <span class="quest-date">Sep 2025 – Dec 2025</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">
+                  GMU Examination Result Sorting System
+                </h3>
+                <p class="quest-desc">
+                  Full-stack application designed to sort and display college
+                  examination results for GMU College. Features a C++ backend
+                  for fast in-place percentage sorting and binary search index
+                  retrieval.
+                </p>
+                <ul class="quest-features">
+                  <li>In-place file sorting algorithms in C++</li>
+                  <li>
+                    Binary Search for instant record lookup & key-indexing
+                  </li>
+                  <li>Clean frontend interface with responsive styling</li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Algorithms</span>
+                  <span class="tech-tag">File I/O</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Calendar App (UI) -->
+          <article class="quest-card" data-category="systems">
+            <div class="quest-banner">
+              <img src="assets/calendar.png" alt="Calendar App" />
+              <span class="quest-rarity rarity-rare">RARE</span>
+              <span class="quest-date">2024 – 2025</span>
+            </div>
+            <div class="quest-body">
+              <div>
+                <h3 class="quest-title">Calendar App (Python Desktop UI)</h3>
+                <p class="quest-desc">
+                  A desktop scheduling and calendar application engineered with
+                  Python and Tkinter. Offers intuitive date navigation, task
+                  agenda scheduling, and smooth GUI responsiveness.
+                </p>
+                <ul class="quest-features">
+                  <li>Clean interactive calendar grid with event handling</li>
+                  <li>Lightweight Tkinter GUI architecture</li>
+                  <li>Local storage persistence for task scheduling</li>
+                </ul>
+              </div>
+              <div>
+                <div class="quest-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Tkinter</span>
+                  <span class="tech-tag">Desktop UI</span>
+                  <span class="tech-tag">OOP</span>
+                </div>
+                <div class="quest-footer">
+                  <a
+                    href="https://github.com/PreetamPrashantShet/calendar-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    <span>GitHub Repo</span>
+                  </a>
+                  <button class="btn btn-outline open-resume-btn" type="button">
+                    <span>Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="projects" class="reveal mt-18">
-        <h2>Projects</h2>
+      <!-- ====================================================================
+           4. CODING MINI-GAME: BUG BUSTER 2077
+           ==================================================================== -->
+      <section id="game" class="game-section reveal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="accent-bracket">[</span> CODING ARCADE: BUG BUSTER
+              2077 <span class="accent-bracket">]</span>
+            </h2>
+            <p class="section-subtitle">
+              &gt; Zap bugs before they crash the production server! Click or
+              tap bugs to debug.
+            </p>
+          </div>
+        </div>
 
-        <div class="card mt-12">
-          <h3 class="cat-title">C++ Projects</h3>
-          <div class="project-card block">
-            <img src="assets/exam_sorting.png" alt="Exam Sorting" />
-            <div class="project-info">
-              <h3>Examination Result Sorting System</h3>
-              <p>
-                A file-based system that reads unsorted student result records
-                and performs in-place sorting by percentage. Supports Binary
-                Search and key-based indexing for fast retrieval. Backend
-                written in C++ with file I/O optimizations.
-              </p>
-              <ul class="feature-list">
-                <li>In-place sorting (percentage)</li>
-                <li>Binary Search for fast retrieval</li>
-                <li>Key-indexing for instant lookup</li>
-              </ul>
-              <a
-                class="btn"
-                href="https://github.com/PreetamPrashantShet"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View on GitHub</a
-              >
+        <div class="arcade-cabinet">
+          <!-- Marquee HUD -->
+          <div class="arcade-top-marquee">
+            <div class="marquee-title"><span>👾</span> BUG BUSTER 2077</div>
+            <div class="marquee-score-hud">
+              <div class="score-cell">
+                <span>SCORE:</span>
+                <span id="gameScoreVal" class="val">0</span>
+              </div>
+              <div class="score-cell">
+                <span>HIGH:</span>
+                <span id="gameHighScoreVal" class="val">0</span>
+              </div>
+              <div class="score-cell">
+                <span>LVL:</span>
+                <span id="gameLevelVal" class="val">1</span>
+              </div>
+              <div class="score-cell">
+                <span>LIVES:</span>
+                <span id="gameLivesVal" class="val hearts">❤️❤️❤️</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arcade Canvas Screen Wrap -->
+          <div class="arcade-screen-wrap">
+            <div class="crt-overlay"></div>
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Game Overlay (Start / Pause / Game Over) -->
+            <div id="gameOverlay" class="game-overlay">
+              <div class="overlay-content">
+                <h3 id="overlayTitle">READY PLAYER ONE?</h3>
+                <p id="overlayMsg">
+                  Coding errors are raining down on the server! Aim your
+                  debugger laser by clicking or tapping on the bug tags to
+                  destroy them.
+                </p>
+                <div class="game-instructions">
+                  <span class="inst-badge"
+                    >🎯 <strong>Target:</strong> Click/Tap Bugs</span
+                  >
+                  <span class="inst-badge"
+                    >⚡ <strong>Score:</strong> 100 - 300 pts each</span
+                  >
+                  <span class="inst-badge"
+                    >❤️ <strong>Lives:</strong> 3 Server Crashes</span
+                  >
+                  <span class="inst-badge"
+                    >🔊 <strong>Audio:</strong> Turn on SFX top-right</span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  style="padding: 14px 28px; font-size: 1rem"
+                >
+                  <span>▶</span> START DEBUGGING
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arcade Bottom Controls -->
+          <div class="arcade-controls-bar">
+            <div class="arcade-btn-cluster">
+              <button id="gameStartBtn" class="btn btn-arcade" type="button">
+                ▶ Start Game
+              </button>
+              <button id="gameResetBtn" class="btn btn-outline" type="button">
+                🔄 Reset
+              </button>
+            </div>
+            <div class="game-hint">
+              💡 Tip: Turn on <strong>SFX ON</strong> in the top header for
+              retro 8-bit laser sounds!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           5. TECH ARSENAL & CERTIFICATIONS
+           ==================================================================== -->
+      <section id="skills" class="skills-section reveal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="accent-bracket">[</span> TECH ARSENAL & SKILLS
+              <span class="accent-bracket">]</span>
+            </h2>
+            <p class="section-subtitle">
+              &gt; Character Attributes, Tech Stack Proficiency & Industry
+              Certifications
+            </p>
+          </div>
+        </div>
+
+        <div class="arsenal-grid">
+          <!-- Programming Languages -->
+          <div class="card skill-category">
+            <h3><span>💻</span> Programming Languages</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Python</span><span>92%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>C++ (Algorithms & File I/O)</span><span>88%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>JavaScript / TypeScript</span><span>90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Java & SQL (MySQL)</span><span>85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web & Frameworks -->
+          <div class="card skill-category">
+            <h3><span>🌐</span> Web & Frameworks</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>React.js & Tailwind CSS</span><span>90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>FastAPI & REST APIs</span><span>86%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 86%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Node.js & Express.js</span><span>82%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 82%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>HTML5 & Modern CSS3</span><span>95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 95%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI / ML & DevOps -->
+          <div class="card skill-category">
+            <h3><span>🧠</span> AI / ML & Tools</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Google Gemini API & GenAI</span><span>88%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>XGBoost & NeuralProphet</span><span>84%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 84%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>OpenCV & MediaPipe (Vision)</span><span>80%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Docker & Prometheus / Grafana</span><span>78%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" style="width: 78%"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="card mt-12">
-          <h3 class="cat-title">Web & UI Projects</h3>
-          <div class="projects-grid mt-8">
-            <div class="project-card">
-              <img src="assets/calendar.png" alt="Calendar UI" />
-              <div class="project-info">
-                <h3>Calendar App (UI)</h3>
-                <p>
-                  Calendar built with Python/Tkinter. Clean date navigation and
-                  UI for scheduling.
-                </p>
+        <!-- Certifications -->
+        <div class="cert-cards-grid">
+          <div class="cert-card">
+            <div class="cert-info">
+              <h4>SQL - MySQL for Data Analytics & Business Intelligence</h4>
+              <p>Issued by Udemy • Verified Credential</p>
+            </div>
+            <span class="cert-badge">★ CERTIFIED</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-info">
+              <h4>The Complete Full-Stack Web Development Bootcamp</h4>
+              <p>Issued by Udemy • Comprehensive Web Stack</p>
+            </div>
+            <span class="cert-badge">★ CERTIFIED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. QUEST LOG / EDUCATION & RESUME
+           ==================================================================== -->
+      <section id="quest-log" class="quest-log-section reveal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="accent-bracket">[</span> QUEST LOG: EDUCATION &
+              RESUME <span class="accent-bracket">]</span>
+            </h2>
+            <p class="section-subtitle">
+              &gt; Academic Achievements and Verified Background
+            </p>
+          </div>
+        </div>
+
+        <div class="education-timeline">
+          <!-- GM University -->
+          <div class="edu-card">
+            <div class="edu-header">
+              <h4>UG ISE (B.Tech)</h4>
+              <span class="edu-badge">CURRENT QUEST</span>
+            </div>
+            <p class="edu-inst">GM University</p>
+            <p class="edu-dates">Oct 2023 – Present • Davanagere, Karnataka</p>
+            <p class="edu-score">
+              🏆 Cumulative GPA: <strong>8.2 / 10.0</strong>
+            </p>
+            <p
+              class="code-font"
+              style="
+                font-size: 0.8rem;
+                color: var(--text-muted);
+                margin-top: 8px;
+              "
+            >
+              Focus: Data Structures, Computer Networks, Database Management,
+              Operating Systems, Machine Learning & Software Engineering.
+            </p>
+          </div>
+
+          <!-- Himalaya PU College -->
+          <div class="edu-card">
+            <div class="edu-header">
+              <h4>Pre-University Course (PUC / 12th)</h4>
+              <span class="edu-badge">COMPLETED</span>
+            </div>
+            <p class="edu-inst">Himalaya PU College</p>
+            <p class="edu-dates">Jun 2021 – Apr 2023</p>
+            <p class="edu-score">🏆 Score: <strong>75.67%</strong></p>
+            <p
+              class="code-font"
+              style="
+                font-size: 0.8rem;
+                color: var(--text-muted);
+                margin-top: 8px;
+              "
+            >
+              Focus: Physics, Chemistry, Mathematics, and Computer Science
+              (PCMC).
+            </p>
+          </div>
+        </div>
+
+        <!-- Resume Action Banner -->
+        <div class="resume-banner-box">
+          <div class="resume-banner-text">
+            <h3>Preetam Prashant Shet — Official Resume</h3>
+            <p>
+              Ready to inspect full qualifications, academic records, project
+              breakdown, and skill matrix.
+            </p>
+          </div>
+          <div class="resume-btn-cluster">
+            <button class="btn btn-primary open-resume-btn" type="button">
+              <span>👁️</span> View Full Resume
+            </button>
+            <button id="printResumeBtn" class="btn btn-outline" type="button">
+              <span>🖨️</span> Print / Save PDF
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. COMMS TERMINAL / CONTACT & VERIFIED CHANNELS
+           ==================================================================== -->
+      <section id="contact" class="contact-section reveal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="accent-bracket">[</span> COMMS TERMINAL & CONNECT
+              <span class="accent-bracket">]</span>
+            </h2>
+            <p class="section-subtitle">
+              &gt; Direct transmission lines for internships, collaborations &
+              project inquiries
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left: Verified Contact Channels (ONLY WhatsApp, Phone, Email, LinkedIn, LeetCode, GitHub) -->
+          <div class="card channels-box">
+            <div>
+              <h3>Verified Frequencies</h3>
+              <p>
+                Reach out across any of my official channels. I am actively
+                seeking software engineering internships and collaborative
+                opportunities.
+              </p>
+
+              <div class="verified-channels-grid">
+                <!-- 1. WhatsApp -->
                 <a
-                  class="btn"
-                  href="https://github.com/PreetamPrashantShet/calendar-app"
+                  href="https://wa.me/918660786561?text=Hello%20Preetam,%20I%20saw%20your%20portfolio!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View on GitHub</a
+                  class="channel-card whatsapp"
+                  title="Chat on WhatsApp"
                 >
-              </div>
-            </div>
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.66 1.33-.43.08-.98.11-3.08-.75-2.68-1.1-4.41-3.83-4.54-4.01-.13-.18-1.09-1.45-1.09-2.76 0-1.32.69-1.96.93-2.22.24-.26.53-.33.71-.33.18 0 .36 0 .51.01.16.01.37-.06.58.44.22.53.75 1.83.82 1.97.07.14.11.31.02.49-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.14-.29.29-.12.58.16.29.73 1.2 1.57 1.94 1.08.96 1.98 1.26 2.27 1.4.29.14.46.12.63-.07.18-.19.75-.87.95-1.17.2-.3.4-.25.68-.15.28.1.1.77 2.05.82 2.19.05.14.08.3.08.46 0 .71-.16 1.08-.24 1.29z"
+                    />
+                  </svg>
+                  <span class="channel-name">WhatsApp</span>
+                  <span class="channel-hint">+91 8660786561</span>
+                </a>
 
-            <div class="project-card">
-              <img src="assets/profile.jpg" alt="Portfolio" />
-              <div class="project-info">
-                <h3>Personal Portfolio</h3>
-                <p>
-                  Modern responsive portfolio with dark/light mode, animations
-                  and contact form.
-                </p>
+                <!-- 2. Contact Number -->
                 <a
-                  class="btn"
+                  href="tel:+918660786561"
+                  class="channel-card"
+                  title="Call Direct"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    />
+                  </svg>
+                  <span class="channel-name">Call Phone</span>
+                  <span class="channel-hint">8660786561</span>
+                </a>
+
+                <!-- 3. Email -->
+                <a
+                  href="mailto:preetam.prashant866@gmail.com"
+                  class="channel-card"
+                  title="Email Preetam"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                  <span class="channel-name">Email</span>
+                  <span class="channel-hint">preetam.prashant...</span>
+                </a>
+
+                <!-- 4. LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-card"
+                  title="LinkedIn Profile"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                    />
+                  </svg>
+                  <span class="channel-name">LinkedIn</span>
+                  <span class="channel-hint">Preetam Prashant Shet</span>
+                </a>
+
+                <!-- 5. LeetCode -->
+                <a
+                  href="https://leetcode.com/u/Preetam_Shet77"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-card leetcode"
+                  title="LeetCode Competitive Coding"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 4.818 3.659c.28.026.56.036.84.03a6.002 6.002 0 0 0 3.33-1.077l3.967-3.968a1.37 1.37 0 1 0-1.939-1.938l-3.967 3.968a3.256 3.256 0 0 1-1.808.585 3.25 3.25 0 0 1-.458-.016 3.207 3.207 0 0 1-2.607-1.982 3.14 3.14 0 0 1-.19-.553 3.01 3.01 0 0 1-.033-1.282 2.87 2.87 0 0 1 .656-1.144l3.85-4.123 5.4-5.783a1.373 1.373 0 0 0-.96-2.353zm3.766 6.064a1.37 1.37 0 0 0-.968.402l-5.32 5.32a1.37 1.37 0 1 0 1.938 1.938l5.32-5.32a1.37 1.37 0 0 0-.97-2.34z"
+                    />
+                  </svg>
+                  <span class="channel-name">LeetCode</span>
+                  <span class="channel-hint">Preetam_Shet77</span>
+                </a>
+
+                <!-- 6. GitHub -->
+                <a
                   href="https://github.com/PreetamPrashantShet"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View repo</a
+                  class="channel-card"
+                  title="GitHub Code Repositories"
                 >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+                    />
+                  </svg>
+                  <span class="channel-name">GitHub</span>
+                  <span class="channel-hint">PreetamPrashantShet</span>
+                </a>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div class="card mt-12">
-          <h3 class="cat-title">AI / ML Projects</h3>
-          <div class="project-card mt-8">
-            <img src="assets/water_dashboard.png" alt="Water Dashboard" />
-            <div class="project-info">
-              <h3>Seasonal Reservoir Water Level Prediction</h3>
-              <p>
-                Predicts seasonal reservoir water levels using XGBoost and
-                NeuralProphet. Feature engineering includes rolling averages and
-                timestamp features. Streamlit dashboard for visualization and
-                deployment — supports sustainable water resource planning.
-              </p>
-              <ul class="feature-list">
-                <li>XGBoost Regression</li>
-                <li>NeuralProphet Forecasting</li>
-                <li>Streamlit Dashboard</li>
-              </ul>
-              <a
-                class="btn"
-                href="https://github.com/PreetamPrashantShet/Week-3-Aicte-Internship"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View Internship Repo</a
-              >
+            <div
+              style="
+                margin-top: 20px;
+                font-family: var(--font-code);
+                font-size: 0.75rem;
+                color: var(--text-dim);
+              "
+            >
+              🔒 Direct channel verified • Ankola, Uttara Kannada(D), Karnataka
             </div>
           </div>
+
+          <!-- Right: Fixed & High-Contrast Contact Form -->
+          <div class="terminal-form-box">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span>TERMINAL // SEND MESSAGE RELAY</span>
+            </div>
+
+            <form
+              id="contactForm"
+              class="contact-form"
+              action="https://formsubmit.co/preetam.prashant866@gmail.com"
+              method="POST"
+            >
+              <!-- FormSubmit config -->
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="⚡ New Message from Portfolio Visitor!"
+              />
+
+              <div class="input-group">
+                <label for="contactName"
+                  >&gt; ENTER SENDER CODENAME / NAME *</label
+                >
+                <input
+                  id="contactName"
+                  class="input-field"
+                  name="name"
+                  type="text"
+                  placeholder="e.g. Alex Mercer"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="contactEmail"
+                  >&gt; ENTER RETURN FREQUENCY / EMAIL *</label
+                >
+                <input
+                  id="contactEmail"
+                  class="input-field"
+                  name="email"
+                  type="email"
+                  placeholder="e.g. alex@example.com"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="contactMsg"
+                  >&gt; TRANSMISSION PAYLOAD / MESSAGE *</label
+                >
+                <textarea
+                  id="contactMsg"
+                  class="input-field"
+                  name="message"
+                  rows="5"
+                  placeholder="Type your message, opportunity, or collaboration offer here..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-action-buttons">
+                <button
+                  id="submitWhatsAppBtn"
+                  class="btn btn-whatsapp"
+                  type="button"
+                >
+                  <span>💬</span> SEND TO WHATSAPP
+                </button>
+                <button
+                  id="submitGmailBtn"
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  <span>✉️</span> SEND VIA GMAIL
+                </button>
+              </div>
+
+              <div class="form-action-buttons" style="margin-top: 8px">
+                <button
+                  id="submitFormBtn"
+                  class="btn btn-outline"
+                  type="submit"
+                >
+                  <span>⚡</span> SUBMIT DIRECT FORM
+                </button>
+                <button id="copyMsgBtn" class="btn btn-outline" type="button">
+                  <span>📋</span> COPY MESSAGE
+                </button>
+              </div>
+
+              <div id="status" class="status-msg"></div>
+            </form>
+          </div>
         </div>
       </section>
-      <section class="connect-section reveal mt-18">
-        <h2 class="connect-title">Connect With Me</h2>
 
-        <div class="social-links">
-          <a
-            href="https://www.instagram.com/preetam_shet77?igsh=ZWtsY2Y5d3pweHpn"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-            title="Instagram"
-          >
-            <img src="assets/icons/instagram.png" alt="Instagram" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-            title="LinkedIn"
-          >
-            <img src="assets/icons/linkedin.png" alt="LinkedIn" />
-          </a>
-
-          <a
-            href="https://www.snapchat.com/add/preetampshet24"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-            title="Snapchat"
-          >
-            <img src="assets/icons/snapchat.png" alt="Snapchat" />
-          </a>
-        </div>
-      </section>
-
-      <section id="contact" class="card reveal mt-18">
-        <h2>Contact</h2>
-        <p class="text-muted">
-          Send me a message — delivered to my email via Formspree.
-        </p>
-
-        <form
-          id="contactForm"
-          class="contact-form"
-          action="https://formspree.io/f/meoneonp"
-          method="POST"
-        >
-          <input
-            class="input"
-            name="name"
-            type="text"
-            placeholder="Your name"
-            required
-          />
-          <input
-            class="input"
-            name="email"
-            type="email"
-            placeholder="Your email"
-            required
-          />
-          <textarea
-            class="input"
-            name="message"
-            rows="6"
-            placeholder="Message"
-            required
-          ></textarea>
-          <button class="submit" type="submit">Send Message</button>
-          <div id="status" class="text-muted mt-6"></div>
-        </form>
-      </section>
-
+      <!-- Footer -->
       <footer class="footer">
-        © 2025 Preetam Prashant Shet • Built for GitHub Pages
+        <p>
+          © 2025 – 2026 Preetam Prashant Shet • B.Tech ISE GM University • Built
+          for GitHub Pages
+        </p>
+        <p style="margin-top: 4px">
+          <a href="#home">Back to Top</a> •
+          <a
+            href="https://leetcode.com/u/Preetam_Shet77"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LeetCode</a
+          >
+          •
+          <a
+            href="https://github.com/PreetamPrashantShet"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          •
+          <a
+            href="https://wa.me/918660786561"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+        </p>
       </footer>
     </div>
 
-    <script>
-      // reveal on load
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => el.classList.add("show"));
+    <!-- ====================================================================
+         8. HOLOGRAPHIC RESUME MODAL
+         ==================================================================== -->
+    <div id="resumeModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>📜</span> RESUME // PREETAM PRASHANT SHET
+          </div>
+          <button
+            id="closeResumeBtn"
+            class="modal-close-btn"
+            title="Close (Esc)"
+          >
+            &times;
+          </button>
+        </div>
 
-      // theme toggle
-      const themeToggle = document.getElementById("themeToggle");
-      themeToggle.onclick = () => {
-        const isLight = document.documentElement.classList.toggle("light");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-        themeToggle.textContent = isLight ? "☀️" : "🌙";
-      };
-      if (localStorage.getItem("theme") === "light") {
-        document.documentElement.classList.add("light");
-        themeToggle.textContent = "☀️";
-      } else themeToggle.textContent = "🌙";
+        <div class="modal-body">
+          <div class="resume-header-block">
+            <h2>PREETAM PRASHANT SHET</h2>
+            <div class="resume-contact-line">
+              <span>📧 preetam.prashant866@gmail.com</span>
+              <span>📱 8660786561</span>
+              <span>📍 Ankola, Uttara Kannada(D) 581 314</span>
+            </div>
+            <div class="resume-contact-line" style="margin-top: 6px">
+              <a
+                href="https://www.linkedin.com/in/preetam-prashant-shet-1216ab2a1"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+              •
+              <a
+                href="https://leetcode.com/u/Preetam_Shet77"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LeetCode</a
+              >
+              •
+              <a
+                href="https://github.com/PreetamPrashantShet"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              •
+              <a
+                href="https://wa.me/918660786561"
+                target="_blank"
+                rel="noopener noreferrer"
+                >WhatsApp</a
+              >
+            </div>
+          </div>
 
-      // contact form submit handling (Formspree)
-      const form = document.getElementById("contactForm");
-      const status = document.getElementById("status");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        status.textContent = "Sending...";
-        fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { Accept: "application/json" },
-        })
-          .then((res) => {
-            if (res.ok) {
-              status.textContent = "✔ Message sent! I will reply soon.";
-              status.style.color = "#7fffd4";
-              form.reset();
-            } else {
-              res
-                .json()
-                .then((j) => {
-                  status.textContent =
-                    j && j.error ? j.error : "Oops! Something went wrong.";
-                  status.style.color = "#ff6b6b";
-                })
-                .catch(() => {
-                  status.textContent = "Oops! Something went wrong.";
-                  status.style.color = "#ff6b6b";
-                });
-            }
-          })
-          .catch(() => {
-            status.textContent = "Network error. Try again.";
-            status.style.color = "#ff6b6b";
-          });
-      });
-    </script>
+          <h3 class="resume-section-title">Professional Summary</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem">
+            Results-driven Information Science Engineering student with a strong
+            foundation in software development, web technologies, database
+            management, and data analytics. Proficient in Java, Python, SQL,
+            React.js, HTML, CSS, and JavaScript, with hands-on experience
+            developing academic and project-based solutions. Demonstrated
+            ability to learn new technologies quickly, solve complex problems,
+            and collaborate effectively in team environments. Passionate about
+            leveraging technical skills to build innovative solutions and
+            seeking an internship opportunity to gain industry experience while
+            contributing to organizational success.
+          </p>
+
+          <h3 class="resume-section-title">Education</h3>
+          <ul class="resume-list">
+            <li>
+              <strong
+                >B.Tech — Information Science & Engineering (UG ISE)</strong
+              ><br />
+              GM University • Oct 2023 – Present • <strong>CGPA: 8.2</strong>
+            </li>
+            <li>
+              <strong>Pre-University Course (PUC / 12th)</strong><br />
+              Himalaya PU College • Jun 2021 – Apr 2023 •
+              <strong>Score: 75.67%</strong>
+            </li>
+          </ul>
+
+          <h3 class="resume-section-title">Projects</h3>
+          <ul class="resume-list">
+            <li>
+              <strong>AI-Powered Digital Forensics Platform (TruthLens)</strong>
+              (Jan 2025 – Mar 2025)<br />
+              <em
+                >Tech: React.js, FastAPI, Python, Tailwind CSS, Framer Motion,
+                OpenCV, MediaPipe, TensorFlow Lite, Google Authentication</em
+              ><br />
+              AI-powered forensics platform to detect manipulated digital
+              content (deepfakes, misinformation). Features biometric
+              authentication with facial recognition and liveness detection.
+            </li>
+            <li>
+              <strong>AI-Powered Incident Postmortem Generator</strong> (Jan
+              2026 – Feb 2026)<br />
+              <em
+                >Tech: React.js, TypeScript, FastAPI, Python, Firebase, Google
+                Gemini AI API, REST API, Vite</em
+              ><br />
+              Automates the creation of structured incident reports using
+              Generative AI (Gemini) with root cause identification and
+              actionable recommendations.
+            </li>
+            <li>
+              <strong>AI-Seasonal-Reservoir-Water-Level-Prediction</strong> (Sep
+              2025 – Nov 2026)<br />
+              <em
+                >Tech: Python, XGBoost Regression, NeuralProphet Forecasting,
+                Streamlit Dashboard</em
+              ><br />
+              Predicts seasonal reservoir water levels using ML and AI
+              forecasting models for sustainable water management.
+            </li>
+            <li>
+              <strong>AI-Powered Application Monitoring Dashboard</strong> (Mar
+              2026 – May 2026)<br />
+              <em
+                >Tech: Node.js, Express.js, Prometheus, Grafana, Docker, Docker
+                Compose</em
+              ><br />
+              Collects live application metrics (HTTP requests, CPU/Memory
+              usage, response time), scraped by Prometheus and visualized in
+              Grafana.
+            </li>
+            <li>
+              <strong>GMU-college-examination-sorter-website</strong> (Sep 2025
+              – Dec 2025)<br />
+              <em>Tech: C++, HTML, CSS</em><br />
+              Full-stack examination sorting system with C++ backend for
+              in-place sorting and binary search index retrieval.
+            </li>
+          </ul>
+
+          <h3 class="resume-section-title">
+            Technical Skills & Certifications
+          </h3>
+          <ul class="resume-list">
+            <li>
+              <strong>Programming Languages:</strong> Python, C++, JavaScript,
+              TypeScript, Java, SQL
+            </li>
+            <li>
+              <strong>Frameworks & Libraries:</strong> React.js, FastAPI,
+              Node.js, Express.js, Tailwind CSS, OpenCV, MediaPipe, TensorFlow
+              Lite, Streamlit
+            </li>
+            <li>
+              <strong>Tools & DevOps:</strong> Docker, Docker Compose,
+              Prometheus, Grafana, Git & GitHub, VS Code, PyCharm, Vite, Figma
+            </li>
+            <li>
+              <strong>Certifications:</strong> SQL - MySQL for Data Analytics &
+              Business Intelligence (Udemy), The Complete Full-Stack Web
+              Development Bootcamp (Udemy)
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="btn btn-outline"
+            onclick="window.print()"
+            type="button"
+          >
+            <span>🖨️</span> Print / Save PDF
+          </button>
+          <a
+            href="https://wa.me/918660786561?text=Hi%20Preetam,%20I%20reviewed%20your%20resume!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+          >
+            <span>💬</span> Message on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
   </body>
 </html>
